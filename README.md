@@ -2,7 +2,7 @@
 
 Balance your life.
 
-## Description
+## About Balance
 
 Let's pass on connecting that bank account and keep money-tracking simple.
 
