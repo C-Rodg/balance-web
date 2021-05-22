@@ -6,7 +6,7 @@ import PasswordChangeForm from '../PasswordChange';
 import { AuthUserContext, withAuthorization } from '../Session';
 import SignOutButton from '../SignOut';
 import { AUTHENTICATED_USER } from '../../constants/roles.js';
-import * as ROUTES from '../../constants/routes';
+import BackButton from '../BackButton';
 
 function SettingsPage() {
 	return (
@@ -18,7 +18,7 @@ function SettingsPage() {
 					<PasswordForgetForm />
 					<PasswordChangeForm />
 					<SignOutButton />
-					<Link to={ROUTES.HOME}>Return Home Page</Link>
+					<BackButton />
 				</div>
 			)}
 		</AuthUserContext.Consumer>

@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 
 import { withAuthorization } from '../Session';
 import { AUTHENTICATED_USER } from '../../constants/roles.js';
-import * as ROUTES from '../../constants/routes';
+import BackButton from '../BackButton';
 
 function MonthPage() {
 	return (
 		<div className="month-page">
 			<h1>Month Page</h1>
-			<Link to={ROUTES.HOME}>Return Home Page</Link>
+			<BackButton />
 		</div>
 	);
 }
