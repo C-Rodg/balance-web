@@ -4,6 +4,7 @@ import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 import { AuthUserContext, withAuthorization } from '../Session';
 import SignOutButton from '../SignOut';
+import { AUTHENTICATED_USER } from '../../constants/roles.js';
 
 function SettingsPage() {
 	return (
@@ -21,6 +22,4 @@ function SettingsPage() {
 	);
 }
 
-const condition = (authUser) => !!authUser;
-
-export default withAuthorization(condition)(SettingsPage);
+export default withAuthorization(AUTHENTICATED_USER)(SettingsPage);

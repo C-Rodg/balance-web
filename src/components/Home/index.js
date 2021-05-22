@@ -1,5 +1,6 @@
 import { withAuthorization } from '../Session';
 import SignOutButton from '../SignOut';
+import { AUTHENTICATED_USER } from '../../constants/roles.js';
 
 function HomePage() {
 	return (
@@ -10,6 +11,4 @@ function HomePage() {
 	);
 }
 
-const condition = (authUser) => !!authUser;
-
-export default withAuthorization(condition)(HomePage);
+export default withAuthorization(AUTHENTICATED_USER)(HomePage);
