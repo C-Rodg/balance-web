@@ -10,3 +10,4 @@ export const BUDGETS = '/budgets';
 export const NEW_BUDGET = '/new-budget';
 export const MONTH = '/month';
 export const PASSWORD_FORGET = '/pw-forget';
+export const ADMIN = '/admin';

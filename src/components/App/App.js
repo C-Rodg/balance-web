@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
+import AdminPage from '../Admin';
 import AddExpensePage from '../AddExpense';
 import BudgetsPage from '../Budgets';
 import HomePage from '../Home';
@@ -32,6 +33,7 @@ const App = () => (
 			<Route path={ROUTES.SETTINGS} component={SettingsPage} />
 			<Route path={ROUTES.SIGN_IN} component={SignInPage} />
 			<Route path={ROUTES.SIGN_UP} component={SignUpPage} />
+			<Route path={ROUTES.ADMIN} component={AdminPage} />
 		</div>
 	</Router>
 );

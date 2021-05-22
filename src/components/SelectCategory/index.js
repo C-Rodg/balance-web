@@ -1,5 +1,5 @@
 function SelectCategoryPage() {
-	return <div class="select-category-page">SelectCategoryPage</div>;
+	return <div className="select-category-page">SelectCategoryPage</div>;
 }
 
 export default SelectCategoryPage;

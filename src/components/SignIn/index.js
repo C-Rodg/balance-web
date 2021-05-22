@@ -7,7 +7,7 @@ import * as ROUTES from '../../constants/routes';
 import { PasswordForgetLink } from '../PasswordForget';
 
 const SignInPage = () => (
-	<div class="sign-in-page">
+	<div className="sign-in-page">
 		<h1>SignIn</h1>
 		<SignInForm />
 		<PasswordForgetLink />
@@ -54,7 +54,7 @@ class SignInFormBase extends Component {
 		const isInvalid = password === '' || email === '';
 
 		return (
-			<form onSubmit={this.onSubmit}>
+			<form onSubmit={this.onSubmit} className="signin-form-base">
 				<input
 					name="email"
 					value={email}

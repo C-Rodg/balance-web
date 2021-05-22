@@ -1,5 +1,5 @@
 function NewBudgetPage() {
-	return <div class="new-budget-page">NewBudgetPage</div>;
+	return <div className="new-budget-page">NewBudgetPage</div>;
 }
 
 export default NewBudgetPage;

@@ -9,7 +9,7 @@ function SettingsPage() {
 	return (
 		<AuthUserContext.Consumer>
 			{(authUser) => (
-				<div class="settings-page">
+				<div className="settings-page">
 					<div>Settings Page</div>
 					<div>{authUser.email}</div>
 					<PasswordForgetForm />

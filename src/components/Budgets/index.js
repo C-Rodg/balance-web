@@ -1,5 +1,5 @@
 function BudgetsPage() {
-	return <div class="budgets-page">BudgetsPage</div>;
+	return <div className="budgets-page">BudgetsPage</div>;
 }
 
 export default BudgetsPage;
