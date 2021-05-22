@@ -1,18 +1,18 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
-import AddExpensePage from '../AddExpense/AddExpense.js';
-import BudgetsPage from '../Budgets/Budgets.js';
-import HomePage from '../Home/Home.js';
-import LandingPage from '../Landing/Landing.js';
-import MonthPage from '../Month/Month.js';
-import NewBudgetPage from '../NewBudget/NewBudget.js';
-import NewCategoryPage from '../NewCategory/NewCategory.js';
-import PasswordForgetPage from '../PasswordForget/PasswordForget.js';
-import SelectCategoryPage from '../SelectCategory/SelectCategory.js';
-import SettingsPage from '../Settings/Settings.js';
-import SignInPage from '../SignIn/SignIn.js';
-import SignUpPage from '../SignUp/SignUp.js';
+import AddExpensePage from '../AddExpense';
+import BudgetsPage from '../Budgets';
+import HomePage from '../Home';
+import LandingPage from '../Landing';
+import MonthPage from '../Month';
+import NewBudgetPage from '../NewBudget';
+import NewCategoryPage from '../NewCategory';
+import PasswordForgetPage from '../PasswordForget';
+import SelectCategoryPage from '../SelectCategory';
+import SettingsPage from '../Settings';
+import SignInPage from '../SignIn';
+import SignUpPage from '../SignUp';
 import * as ROUTES from '../../constants/routes';
 
 function App() {
