@@ -10,6 +10,7 @@ function SelectCategoryPage() {
 			<h1>SelectCategoryPage</h1>
 			<Link to={ROUTES.NEW_CATEGORY}>New Category Page</Link>
 			<Link to={ROUTES.NEW_EXPENSE}>Return New Expense Page</Link>
+			<div>List of existing categories</div>
 		</div>
 	);
 }

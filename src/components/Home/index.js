@@ -14,6 +14,19 @@ function HomePage() {
 			<Link to={ROUTES.MONTH}>Month Page</Link>
 			<Link to={ROUTES.SETTINGS}>Settings Page</Link>
 			<Link to={ROUTES.BUDGETS}>List Budgets Page</Link>
+			<div>
+				<div>Topbar - Settings button, Balance text, Budgets button</div>
+				<div>Year, Prev Month button, Month button, New Month button</div>
+				<div>
+					<div>Today's expenses text</div>
+					<div>
+						<div>List</div>
+						<div>Icon, Title, Amount, swipeable edit/delete</div>
+					</div>
+					<div>Total amount, Total $$$</div>
+				</div>
+				<div>New expense button</div>
+			</div>
 		</div>
 	);
 }

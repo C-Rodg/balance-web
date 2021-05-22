@@ -9,6 +9,10 @@ function NewCategoryPage() {
 		<div className="new-category-page">
 			<h1>NewCategoryPage</h1>
 			<Link to={ROUTES.SELECT_CATEGORY}>Return Select Category Page</Link>
+			<div>
+				<div>Select icon</div>
+				<div>Set category name</div>
+			</div>
 		</div>
 	);
 }
