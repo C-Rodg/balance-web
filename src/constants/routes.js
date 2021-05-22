@@ -1,0 +1,12 @@
+export const LANDING = '/';
+export const SIGN_UP = '/signup';
+export const SIGN_IN = '/signin';
+export const HOME = '/home';
+export const SETTINGS = '/settings';
+export const ADD_EXPENSE = '/expense';
+export const SELECT_CATEGORY = '/category';
+export const NEW_CATEGORY = '/new-category';
+export const BUDGETS = '/budgets';
+export const NEW_BUDGET = '/new-budget';
+export const MONTH = '/month';
+export const PASSWORD_FORGET = '/pw-forget';
