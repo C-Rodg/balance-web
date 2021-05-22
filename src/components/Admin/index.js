@@ -4,6 +4,7 @@ import { withFirebase } from '../Firebase';
 import { withAuthorization } from '../Session';
 import { AUTHENTICATED_USER } from '../../constants/roles.js';
 
+// TODO: consider removing this or providing extra security.
 class AdminPage extends Component {
 	constructor(props) {
 		super(props);

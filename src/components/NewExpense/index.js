@@ -4,13 +4,14 @@ import { withAuthorization } from '../Session';
 import { AUTHENTICATED_USER } from '../../constants/roles.js';
 import * as ROUTES from '../../constants/routes';
 
-function MonthPage() {
+function NewExpensePage() {
 	return (
-		<div className="month-page">
-			<h1>Month Page</h1>
+		<div className="new-expense-page">
+			<h1>New Expense Page</h1>
+			<Link to={ROUTES.SELECT_CATEGORY}>Select Category Page</Link>
 			<Link to={ROUTES.HOME}>Return Home Page</Link>
 		</div>
 	);
 }
 
-export default withAuthorization(AUTHENTICATED_USER)(MonthPage);
+export default withAuthorization(AUTHENTICATED_USER)(NewExpensePage);

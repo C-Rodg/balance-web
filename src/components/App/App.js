@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
 import AdminPage from '../Admin';
-import AddExpensePage from '../AddExpense';
+import NewExpensePage from '../NewExpense';
 import BudgetsPage from '../Budgets';
 import HomePage from '../Home';
 import LandingPage from '../Landing';
@@ -22,11 +22,11 @@ const App = () => (
 	<Router>
 		<div className="App">
 			<Route exact path={ROUTES.LANDING} component={LandingPage} />
-			<Route path={ROUTES.ADD_EXPENSE} component={AddExpensePage} />
 			<Route path={ROUTES.BUDGETS} component={BudgetsPage} />
 			<Route path={ROUTES.HOME} component={HomePage} />
 			<Route path={ROUTES.MONTH} component={MonthPage} />
 			<Route path={ROUTES.NEW_BUDGET} component={NewBudgetPage} />
+			<Route path={ROUTES.NEW_EXPENSE} component={NewExpensePage} />
 			<Route path={ROUTES.NEW_CATEGORY} component={NewCategoryPage} />
 			<Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
 			<Route path={ROUTES.SELECT_CATEGORY} component={SelectCategoryPage} />

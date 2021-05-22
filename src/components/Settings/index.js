@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 import { AuthUserContext, withAuthorization } from '../Session';
 import SignOutButton from '../SignOut';
 import { AUTHENTICATED_USER } from '../../constants/roles.js';
+import * as ROUTES from '../../constants/routes';
 
 function SettingsPage() {
 	return (
@@ -16,6 +18,7 @@ function SettingsPage() {
 					<PasswordForgetForm />
 					<PasswordChangeForm />
 					<SignOutButton />
+					<Link to={ROUTES.HOME}>Return Home Page</Link>
 				</div>
 			)}
 		</AuthUserContext.Consumer>
