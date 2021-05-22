@@ -1,4 +1,6 @@
+import { withAuthorization } from '../Session';
 import SignOutButton from '../SignOut';
+
 function HomePage() {
 	return (
 		<div class="home-page">
@@ -8,4 +10,6 @@ function HomePage() {
 	);
 }
 
-export default HomePage;
+const condition = (authUser) => !!authUser;
+
+export default withAuthorization(condition)(HomePage);
