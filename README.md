@@ -29,6 +29,14 @@ REACT_APP_APP_ID=X:XXXX:xxx
 REACT_APP_MEASUREMENT_ID=X-XXXXX
 ```
 
+## TODO:
+
+- [NS] Figure out how to keep track of stack of info: Expense Amount > Select Category > Back
+- Find library to deal with Dates
+- Find library to deal with swipe list
+- Place proper components on proper pages
+- Style application
+
 ### Contributors
 
 [Curtis](https://curtisrodgers.com/)
