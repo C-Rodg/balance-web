@@ -29,6 +29,9 @@ REACT_APP_APP_ID=X:XXXX:xxx
 REACT_APP_MEASUREMENT_ID=X-XXXXX
 ```
 
+## IN-PROGRESS:
+ - [ns] Trying to make the new expense page listen to the history and on click for category remeber it -> isn't unlistening causing memory leak
+
 ## TODO:
 
 - Find library to deal with Dates
