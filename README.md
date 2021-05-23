@@ -32,6 +32,7 @@ REACT_APP_MEASUREMENT_ID=X-XXXXX
 ## TODO:
 
 - [NS] Figure out how to keep track of stack of info: Expense Amount > Select Category > Back
+  - Initial Branch Commit
 - Find library to deal with Dates
 - Find library to deal with swipe list
 - Place proper components on proper pages
