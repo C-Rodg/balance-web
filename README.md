@@ -36,6 +36,8 @@ REACT_APP_MEASUREMENT_ID=X-XXXXX
 - Find library to deal with swipe list
 - Place proper components on proper pages
 - Style application
+- Add favicons
+- Setup to function as PWA
 
 ### Contributors
 
