@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import { withAuthorization } from '../Session';
 import { AUTHENTICATED_USER } from '../../constants/roles.js';
 import BackButton from '../BackButton';
