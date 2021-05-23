@@ -5,17 +5,34 @@ import { withAuthorization } from '../Session';
 import { useHistory} from 'react-router-dom';
 import { AUTHENTICATED_USER } from '../../constants/roles.js';
 import * as ROUTES from '../../constants/routes';
-import BackButton from '../BackButton';
 
 const NewExpensePage = () => {
 	// instantiate history
 	let history = useHistory();
 
 	// state via hooks
-	const[amount, setAmount] = useState(0)
+	const [amount, setAmount] = useState(0)
+	const [categoryRender, setCategoryRender] = useState(null)
+
+	// see if a category has been picked
+	const unlisten = history.listen((location, action) => {
+
+		// add the category
+		if (location.pathname === "/category") {
+			
+			// check for state
+			if (location.state !== undefined) {
+				// add the category
+				setCategoryRender(
+					<h2 key={location.state.category.id}>{location.state.category.name}</h2>
+				)
+			}
+		}
+	})
 
 	// check if there was a value previously saved
 	useEffect( () => {
+
 		// if the value is saved in the location, set the amount 
 		history.location.state !== undefined ? setAmount(history.location.state.expenseAmount) : console.log("no amount");
 
@@ -36,11 +53,23 @@ const NewExpensePage = () => {
 		// save to DB and navigate home
 	};
 
+	// handle going back
+	const handleGoBack = () => {
+		// unlisten
+		unlisten()
+
+		// go back
+		history.goBack()
+	}
+	
 	return (
 		<div className="new-expense-page">
 			<h1>New Expense Page</h1>
 			<Link to={ROUTES.SELECT_CATEGORY}>Select Category Page</Link>
-			<BackButton />
+			{categoryRender}
+			<button type="button" onClick={handleGoBack}>
+				BACK
+			</button>
 			<form onSubmit={onSubmit}>
 				<input
 					name="amount"
