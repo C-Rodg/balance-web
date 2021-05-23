@@ -48,11 +48,35 @@ class Firebase {
 
 	user = (uid) => this.db.ref(`users/${uid}`);
 
+	// Get user UID
+	getUserUID = () => {
+		if (!this.auth || !this.auth.currentUser) {
+			return null;
+		}
+		return this.auth.currentUser.uid;
+	};
+
+	// TODO: probably not needed.
 	users = () => this.db.ref('users');
 
 	// *** Expenses API *** //
+	expensesRef = () => this.db.ref(`users/${this.getUserUID()}/expenses`);
+	createNewExpense = (amount) =>
+		this.expensesRef(this.getUserUID()).push({ amount });
+	updateExpense = (id, amount) => this.expensesRef().child(id).set({ amount });
+	deleteExpense = (id) => this.expensesRef().child(id).remove();
+
 	// *** Budgets API *** //
+	budgetsRef = () => this.db.ref(`users/${this.getUserUID()}/budgets`);
+	createNewBudget = (name) => this.budgetsRef().push({ name });
+	updateBudget = (id, name) => this.budgetsRef().child(id).set({ name });
+	deleteBudget = (id) => this.budgetsRef().child(id).remove();
+
 	// *** Categories API *** //
+	categoriesRef = () => this.db.ref(`users/${this.getUserUID()}/categories`);
+	createNewCategory = (name) => this.categoriesRef().push({ name });
+	updateCategory = (id, name) => this.categoriesRef().child(id).set({ name });
+	deleteCategory = (id) => this.categoriesRef().child(id).remove();
 }
 
 export default Firebase;

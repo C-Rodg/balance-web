@@ -3,6 +3,7 @@ import React from 'react';
 import AuthUserContext from './context';
 import { withFirebase } from '../Firebase';
 
+// Sets the authUser context by listening to Firebase.
 const withAuthentication = (Component) => {
 	class WithAuthentication extends React.Component {
 		constructor(props) {

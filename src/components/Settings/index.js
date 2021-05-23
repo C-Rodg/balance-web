@@ -14,6 +14,7 @@ function SettingsPage() {
 				<div className="settings-page">
 					<div>Settings Page</div>
 					<div>{authUser.email}</div>
+					<div>{JSON.stringify(authUser)}</div>
 					<PasswordForgetForm />
 					<PasswordChangeForm />
 					<SignOutButton />

@@ -5,6 +5,7 @@ import AuthUserContext from './context';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
+// Used to guard routes within the application.
 const withAuthorization = (condition) => (Component) => {
 	class WithAuthorization extends React.Component {
 		componentDidMount() {
