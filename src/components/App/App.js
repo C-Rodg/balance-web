@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {BrowserRouter as Router, Route,} from 'react-router-dom';
 import './App.css';
 
 import AdminPage from '../Admin';
@@ -18,6 +18,8 @@ import SignUpPage from '../SignUp';
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
 
+
+
 const App = () => (
 	<Router>
 		<div className="App">
@@ -26,7 +28,9 @@ const App = () => (
 			<Route path={ROUTES.HOME} component={HomePage} />
 			<Route path={ROUTES.MONTH} component={MonthPage} />
 			<Route path={ROUTES.NEW_BUDGET} component={NewBudgetPage} />
-			<Route path={ROUTES.NEW_EXPENSE} component={NewExpensePage} />
+			<Route exact path={ROUTES.NEW_EXPENSE} >
+				<NewExpensePage />
+			</Route>
 			<Route path={ROUTES.NEW_CATEGORY} component={NewCategoryPage} />
 			<Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
 			<Route path={ROUTES.SELECT_CATEGORY} component={SelectCategoryPage} />

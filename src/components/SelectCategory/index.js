@@ -8,7 +8,7 @@ import BackButton from '../BackButton';
 function SelectCategoryPage() {
 	return (
 		<div className="select-category-page">
-			<h1>SelectCategoryPage</h1>
+			<h1>Select Category Page</h1>
 			<Link to={ROUTES.NEW_CATEGORY}>New Category Page</Link>
 			<BackButton />
 			<div>List of existing categories</div>

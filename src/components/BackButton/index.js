@@ -1,6 +1,7 @@
-import { useHistory } from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
 
 function BackButton() {
+	// instantiate the react dom classes
 	let history = useHistory();
 
 	function handleClick() {
