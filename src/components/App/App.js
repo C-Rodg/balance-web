@@ -28,9 +28,7 @@ const App = () => (
 			<Route path={ROUTES.HOME} component={HomePage} />
 			<Route path={ROUTES.MONTH} component={MonthPage} />
 			<Route path={ROUTES.NEW_BUDGET} component={NewBudgetPage} />
-			<Route exact path={ROUTES.NEW_EXPENSE} >
-				<NewExpensePage />
-			</Route>
+			<Route exact path={ROUTES.NEW_EXPENSE} component={NewExpensePage} />
 			<Route path={ROUTES.NEW_CATEGORY} component={NewCategoryPage} />
 			<Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
 			<Route path={ROUTES.SELECT_CATEGORY} component={SelectCategoryPage} />

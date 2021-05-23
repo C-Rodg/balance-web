@@ -7,7 +7,7 @@ import { AUTHENTICATED_USER } from '../../constants/roles.js';
 import * as ROUTES from '../../constants/routes';
 import BackButton from '../BackButton';
 
-const NewExpensePage = (props) => {
+const NewExpensePage = () => {
 	// instantiate history
 	let history = useHistory();
 
