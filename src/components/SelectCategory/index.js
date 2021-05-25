@@ -29,13 +29,14 @@ function SelectCategoryPage(props) {
 				setCategories(categories);
 			}
 		});
-	}, [])
+	}, [props.firebase])
+
 
 	// function to add category to history stack
 	const handleAddCategory = (e, cat) => {
 
-		// update the histories state
-		history.replace({ state: {category: cat}})
+		// add the category to local storage
+		localStorage.setItem('category', JSON.stringify(cat))
 
 		// go back
 		history.goBack()

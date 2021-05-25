@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, componentDidMount, componentWillUnmount } from 'react';
 import { Link } from 'react-router-dom';
 
 import { withAuthorization } from '../Session';
 import { useHistory} from 'react-router-dom';
 import { AUTHENTICATED_USER } from '../../constants/roles.js';
 import * as ROUTES from '../../constants/routes';
+import BackButton from '../BackButton';
 
 const NewExpensePage = () => {
 	// instantiate history
@@ -12,33 +13,35 @@ const NewExpensePage = () => {
 
 	// state via hooks
 	const [amount, setAmount] = useState(0)
-	const [categoryRender, setCategoryRender] = useState(null)
-
-	// see if a category has been picked
-	const unlisten = history.listen((location, action) => {
-
-		// add the category
-		if (location.pathname === "/category") {
-			
-			// check for state
-			if (location.state !== undefined) {
-				// add the category
-				setCategoryRender(
-					<h2 key={location.state.category.id}>{location.state.category.name}</h2>
-				)
-			}
-		}
-	})
+	const [categoryObj, setCategoryObj] = useState(null)
+	const [categoryRender, setCategoryRender] = useState([])
 
 	// check if there was a value previously saved
 	useEffect( () => {
-
 		// if the value is saved in the location, set the amount 
 		history.location.state !== undefined ? setAmount(history.location.state.expenseAmount) : console.log("no amount");
 
+		// check for localstorage from child component
+		if (localStorage.getItem('category')) {
+			// grab the item
+			let category = JSON.parse(localStorage.getItem('category'))
+
+			// set the category to state
+			setCategoryObj(category)
+
+			// map the object to the ui
+			setCategoryRender(
+				<div key={category.id}>
+					<h3>{category.name}</h3>
+				</div>
+			)
+
+			// clear the item from storage
+			localStorage.removeItem('category')
+		}
+
 		// only want this on initial load, to have dependency array is inefficient
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
+	}, [history])
 
 	const onChange = (e) => {
 		// update state
@@ -52,24 +55,13 @@ const NewExpensePage = () => {
 		event.preventDefault();
 		// save to DB and navigate home
 	};
-
-	// handle going back
-	const handleGoBack = () => {
-		// unlisten
-		unlisten()
-
-		// go back
-		history.goBack()
-	}
 	
 	return (
 		<div className="new-expense-page">
 			<h1>New Expense Page</h1>
 			<Link to={ROUTES.SELECT_CATEGORY}>Select Category Page</Link>
 			{categoryRender}
-			<button type="button" onClick={handleGoBack}>
-				BACK
-			</button>
+			<BackButton />
 			<form onSubmit={onSubmit}>
 				<input
 					name="amount"
