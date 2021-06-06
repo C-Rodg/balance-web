@@ -1,4 +1,4 @@
-import React, { useState, useEffect, componentDidMount, componentWillUnmount } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { withAuthorization } from '../Session';
@@ -13,7 +13,6 @@ const NewExpensePage = () => {
 
 	// state via hooks
 	const [amount, setAmount] = useState(0)
-	const [categoryObj, setCategoryObj] = useState(null)
 	const [categoryRender, setCategoryRender] = useState([])
 
 	// check if there was a value previously saved
@@ -25,9 +24,6 @@ const NewExpensePage = () => {
 		if (localStorage.getItem('category')) {
 			// grab the item
 			let category = JSON.parse(localStorage.getItem('category'))
-
-			// set the category to state
-			setCategoryObj(category)
 
 			// map the object to the ui
 			setCategoryRender(

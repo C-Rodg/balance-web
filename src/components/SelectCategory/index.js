@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useMemo } from "react"
 import { useHistory} from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
@@ -14,8 +14,6 @@ function SelectCategoryPage(props) {
 
 	// state
 	const [categories, setCategories] = useState([])
-	const [categoryDisplayList, setDisplayCategoryList] = useState([])
-
 
 	// grab the cateory data
 	useEffect( () => {
@@ -32,32 +30,28 @@ function SelectCategoryPage(props) {
 	}, [props.firebase])
 
 
-	// function to add category to history stack
-	const handleAddCategory = (e, cat) => {
-
-		// add the category to local storage
-		localStorage.setItem('category', JSON.stringify(cat))
-
-		// go back
-		history.goBack()
-
-	}
-
-	// map the categories to page
-	useEffect( () => {
-		// check if there are any categories
-		if (categories.length > 0) {
-			setDisplayCategoryList(categories.map( (cat, catId) => {
-				return <h3 
-						key={catId} 
-						onClick={(e) => handleAddCategory(e, cat)} 
-						style={{cursor: "pointer"}}>
-							{cat.name}
-						</h3>
-			}))
+	
+	// map memoized categories to display
+	const memoizedCategories = useMemo( () => categories.map( (cat, catId) => {
+		
+		// function to add category to history stack
+		const handleAddCategory = (_e, cat) => {
+	
+			// add the category to local storage
+			localStorage.setItem('category', JSON.stringify(cat))
+	
+			// go back
+			history.goBack()
+	
 		}
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [categories])
+
+		return <h3 
+					key={catId} 
+					onClick={(e) => handleAddCategory(e, cat)} 
+					style={{cursor: "pointer"}}>
+					{cat.name}
+				</h3>
+	}), [categories, history])
 
 	return (
 		<div className="select-category-page">
@@ -65,7 +59,7 @@ function SelectCategoryPage(props) {
 			<Link to={ROUTES.NEW_CATEGORY}>New Category Page</Link>
 			<BackButton />
 			<div>List of existing categories</div>
-			{categoryDisplayList}
+			{memoizedCategories}
 		</div>
 	);
 }

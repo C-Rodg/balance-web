@@ -1,0 +1,55 @@
+.new-category-page {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 75px 75px auto;
+    grid-template-areas: 
+    "nav nav"
+    "currentSelection currentSelection"
+    "containerLeft containerRight"
+    ;
+}
+
+/*   navbar  */
+.new-category-page .nav {
+    grid-area: nav;
+    background-color: rgb(241, 241, 241);
+}
+
+.new-category-page .nav .title {
+    text-align: center;
+}
+
+/*  left selection area   */
+.new-category-page .containerLeft {
+    grid-area: containerLeft;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "selectIconContainer selectCatContainer"
+    ;
+}
+
+/*  icon selection  */
+
+.new-category-page .containerLeft .selectIconContainer {
+    grid-area: selectIconContainer;
+    padding: 10px 0px 0px 10px;
+    border-right: 1px solid rgb(219, 219, 219);
+}
+
+/*  name selection  */
+
+.new-category-page .containerLeft .selectCatContainer {
+    grid-area: selectCatContainer;
+    padding: 10px 0px 0px 10px;
+    border-right: 1px solid rgb(219, 219, 219);
+}
+
+/*  right selection area  */
+.new-category-page .containerRight {
+    grid-area: containerRight;
+    padding: 10px 0px 0px 10px;
+}
