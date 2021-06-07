@@ -30,6 +30,16 @@ REACT_APP_MEASUREMENT_ID=X-XXXXX
 ```
 
 ## IN-PROGRESS:
+ [ns]: Making the create category page and dynamically creating icons
+ 1. static icons created
+ 2. hashmap of jsx elements currently being used to 'select' icon => needs work
+ 3. input created
+ 4. styling started => needs work
+
+ Next Steps:
+ 1. figure out how to dynamically create icons
+ 2. submit category and icon identifier to backend
+ 3. write code eliminating duplicates
 
 ## TODO:
 

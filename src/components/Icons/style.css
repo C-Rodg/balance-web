@@ -1,0 +1,45 @@
+.iconOverallContainer {
+    padding: 5px;
+}
+
+.iconOverallContainer .iconContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 30% 70%;
+    grid-template-areas: 
+    "title"
+    "icons"
+    ;
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.iconOverallContainer .iconContainer .iconsRow {
+    width: 100%;
+    grid-area: icons;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 7px;
+}
+
+.iconOverallContainer .iconContainer .title {
+    grid-area: title;
+    margin: 5px;
+}
+
+.iconOverallContainer .iconContainer .title h3 {
+    font-size: 18px;
+}
+
+.iconOverallContainer .iconContainer .iconsRow .icon {
+    padding: 3px 5px;
+    cursor: pointer;
+    margin: 0px 0px 2px 0px;
+    border-radius: .5rem;
+}
+.iconOverallContainer .iconContainer .iconsRow .icon:hover {
+    background-color: rgb(244, 244, 244);
+    transition: .5s;
+}

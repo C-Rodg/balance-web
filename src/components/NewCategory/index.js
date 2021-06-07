@@ -1,7 +1,8 @@
-import React, {useEffect, useMemo, useState} from 'react'
-
+import React, {useEffect, useMemo, useState} from 'react';
 import { withAuthorization } from '../Session';
 import { AUTHENTICATED_USER } from '../../constants/roles.js';
+import Icon from '../Icons/individualIcon'
+import Icons from '../Icons/index.js'
 import BackButton from '../BackButton';
 import './style.css';
 
@@ -11,6 +12,9 @@ function NewCategoryPage(props) {
 
 	// state for input
 	const [inputText, setInputText] = useState('')
+
+	// state for selected icon
+	const [selectedIcon, setSelectedIcon] = useState(null)
 
 	// place current categories in state, to make sure no duplicates
 	useEffect( () => {
@@ -32,9 +36,14 @@ function NewCategoryPage(props) {
 		return <p key={category.id}>{category.name}</p>
 	}), [categories])
 
-	// functio for mapping the input to state
+	// function for mapping the input to state
 	const handleChange = (e) => {
 		setInputText(e.target.value)
+	}
+
+	// display the selected icon
+	const selectIcon = (icon) => {
+		setSelectedIcon(<Icon name={icon} />)
 	}
 
 	return (
@@ -45,11 +54,19 @@ function NewCategoryPage(props) {
 				<h1 className="title">New Category Page</h1>
 			</div>
 			<div className="currentSelection">
-
+				<div>
+					<h3>Icon: {selectedIcon}</h3>
+				</div>
+				<div>
+					<h3>Title: {inputText}</h3>
+				</div>
 			</div>
 			<div className="containerLeft">
 				<div className="selectIconContainer">
 					<h3>Select icon</h3>
+					<div>
+						<Icons selected={selectIcon}/>
+					</div>
 				</div>
 				<div className="selectCatContainer">
 					<h3>Set category name</h3>
