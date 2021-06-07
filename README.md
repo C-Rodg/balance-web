@@ -29,6 +29,10 @@ REACT_APP_APP_ID=X:XXXX:xxx
 REACT_APP_MEASUREMENT_ID=X-XXXXX
 ```
 
+## Third Party Requirments
+npm install styled-components
+npm install styled-icons (has styled-components as a peer dependency -> look into decreased performance)
+
 ## IN-PROGRESS:
  [ns]: Making the create category page and dynamically creating icons
  1. static icons created
